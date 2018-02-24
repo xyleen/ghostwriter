@@ -1,1 +1,3 @@
 assets/sass/.sass-cache
+assets/css/*
+node_modules/

@@ -1,10 +1,13 @@
 {
-	"name": "ghostwriter",
-	"version": "1.9.3",
+    "name": "xyleen-ghostwriter",
+    "version": "0.0.1",
     "author": {
-        "email": "rg.rorygibson+ghost@gmail.com"
+        "name": "Konrad Księski",
+        "email": "xylleen@gmail.com"
     },
-    "config": {
-        "posts_per_page": 5
+    "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-autoprefixer": "^4.1.0",
+        "gulp-sass": "^3.1.0"
     }
 }
