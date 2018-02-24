@@ -15,7 +15,7 @@
     {{! Styles }}
     <link rel="stylesheet" type="text/css" href="{{asset "css/normalize.css"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic" />
+    <link href='//fonts.googleapis.com/css?family=Dosis:400,600|Open+Sans:300italic,400italic,300,600,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
 
     {{! Ghost outputs important style and meta data with this tag }}
@@ -52,15 +52,29 @@
     </div>
 
     <footer class="footer">
-        <div class="container">
-            <div class="site-title-wrapper">
-                <h1 class="site-title"><a class="js-ajax-link" title="{{@blog.title}}" href="{{@blog.url}}">{{@blog.title}}</a></h1>
-
-                <a class="button-square button-jump-top js-jump-top" href="#"><i class="fa fa-angle-up"></i></a>
+        <div class="jump-top-wrapper button-jump-top">
+            <div>
+                <a class=" js-jump-top" href="#"><i class="fa fa-angle-up"></i></a>
             </div>
-
-            <p class="footer-copyright">&copy; {{date format="YYYY"}} / Published with <a href="https://ghost.org">Ghost</a> / <a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></p>
         </div>
+
+        <div class="container">
+            <h3 class="site-logo"><a title="{{ @blog.title }}" href="{{ @blog.url }}">A Konrad napisał</a></h3>
+
+            <ul class="menu">
+                <li><a class="icon" title="Facebook" href="{{ facebook_url }}"><i class="fa fa-facebook"></i></a></li>
+                <li><a class="icon" title="Twitter" href="{{ twitter_url }}"><i class="fa fa-twitter"></i></a></li>
+                <li><a class="icon" title="Napisz do mnie" href="mailto:konrad@ksieski.pl"><i class="fa fa-envelope"></i></a></li>
+                <li><a class="icon" title="RSS" href="{{ @blog.url }}/rss"><i class="fa fa-rss-square"></i></a></li>
+            </ul>
+
+            <h4 class="social-text">Podobają Ci się moje wpisy, zdjęcia?<br>Polub mój blog na <a href="{{ facebook_url }}" title="Facebook">Facebooku</a>, napisz do mnie!</h4>
+
+            <p class="footer-copyright">
+                Przy użyciu platformy <a href="//ghost.org">Ghost</a> i motywu <a href="//github.com/xyleen/ghostwriter">Ghostwriter</a> z własnymi poprawkami
+                <br>
+                &copy; {{date format="YYYY"}}  <a href="//ksieski.pl">ksieski.pl</a>
+            </p>
     </footer>
 
     {{! Ghost outputs important scripts and data with this tag }}

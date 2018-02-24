@@ -1,0 +1,98 @@
+$footer-background-color: #131719;
+
+.footer {
+    background-color: $footer-background-color;
+    background-image: url(../../assets/img/green-fibers.png);
+    text-align: center;
+    line-height: 1;
+
+    color: darken($background, $amount: 40%);
+
+    margin-top: 95px;
+    padding: 40px 0 30px;
+
+
+    position: relative;
+
+    // Jump to top "^" sign styles
+    .jump-top-wrapper {
+        display: block;
+        overflow: hidden;
+        position: absolute;
+        height: 30px;
+        width: 40px;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+
+        &:after {
+            display: block;
+            content: "";
+            transform: translateY(-12px) rotate(45deg);
+            background-color: $primary;
+            height: 40px;
+            width: 40px;
+        }
+
+        div {
+            position: relative;
+            height: 30px;
+
+            a {
+                color: $background;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 100000;
+            }
+        }
+    }
+
+    .menu {
+        list-style: none;
+        line-height: 1;
+        margin: 15px auto 10px;
+        font-size: 26px;
+        padding: 0;
+
+        li {
+            display: inline-block;
+        }
+
+        li + li {
+            margin-left: 30px;
+        }
+    }
+
+    .site-logo {
+        font-family: $alt-sans;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 30px;
+        margin: 0 0 20px;
+    }
+
+    .social-text {
+        line-height: 1.3;
+        font-family: $alt-sans;
+        font-weight: 300;
+        margin: 0 0 25px;
+    }
+}
+
+.footer-copyright {
+       // font-family: $alt-sans;
+    color: darken($background, 60%);
+    font-size: 12px;
+    margin: 0;
+    text-transform: uppercase;
+
+    a {
+        color: #656565;
+        font-weight: 600;
+
+        &:hover { color: #FEFEFE; }
+    }
+}
