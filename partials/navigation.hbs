@@ -1,3 +1,9 @@
-{{#foreach navigation}}
-    <li class="site-nav-item"><a class="js-ajax-link" title="{{label}} | {{@blog.title}}" href="{{url absolute="true"}}">{{label}}</a></li>
-{{/foreach}}
+{{!-- This requires installation of https://github.com/xyleen/ghost-helper-foreach-middle in Ghost --}}
+{{#foreach-middle navigation}}
+    {{#if isMiddle}}
+        <li class="site-nav-item logo"><a class="js-ajax-link" title="{{ @blog.title }}" href="{{ @blog.url }}">{{ @blog.title }}</a></li>
+        <li class="site-nav-item"><a class="js-ajax-link" title="{{ label }}" href="{{ url absolute="true" }}">{{ label }}</a></li>
+    {{else}}
+        <li class="site-nav-item"><a class="js-ajax-link" title="{{ label }}" href="{{ url absolute="true" }}">{{ label }}</a></li>
+    {{/if}}
+{{/foreach-middle}}

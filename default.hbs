@@ -13,39 +13,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     {{! Styles }}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/normalize.css"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
     <link href='//fonts.googleapis.com/css?family=Dosis:400,600|Open+Sans:300italic,400italic,300,600,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
 
     {{! Ghost outputs important style and meta data with this tag }}
-    {{ghost_head}}
+    {{ ghost_head }}
 </head>
-<body class="{{body_class}}">
+<body class="{{ body_class }}">
 
     <div id="wrapper">
         <header class="site-header">
-            <div class="container">
-                <div class="site-title-wrapper">
-                    {{#if @blog.logo}}
-                        <a class="site-logo" title="{{@blog.title}}" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
-                    {{else}}
-                        <h1 class="site-title"><a title="{{@blog.title}}" href="{{@blog.url}}">{{@blog.title}}</a></h1>
+            <div class="site-title-wrapper">
 
-                        <a class="button-square" href="{{@blog.url}}/rss"><i class="fa fa-rss"></i></a>
+                {{#if post.feature_image }}
+                    <a class="site-logo js-ajax-link" title="{{ @blog.title }}" href="{{ @blog.url }}"><figure class="tint"><img src="{{ post.feature_image }}" alt="{{ @blog.title }}" /></figure></a>
+                {{else}}
+                    <a class="site-logo js-ajax-link" title="{{ @blog.title }}" href="{{ @blog.url }}"><figure class="tint"><img src="{{ @blog.logo }}" alt="{{ @blog.title }}" /></figure></a>
+                {{/if}}
+
+                <div class="header-menu-content">
+                    <nav class="site-nav">
+                        <ul class="site-nav-list">
+                            {{!-- <li class="site-nav-item logo"><a class="js-ajax-link" title="{{ @blog.title }}" href="{{ @blog.url }}">{{ @blog.title }}</a></li> --}}
+                            {{ navigation }}
+
+                            {{!-- {{#if @blog.logo }}
+                                <li class="site-nav-item"><a href="{{@blog.url}}/rss">RSS</a></li>
+                            {{/if}} --}}
+                        </ul>
+                    </nav>
+
+                    {{#if post }}
+                    {{#post}}
+                    <header class="post-header">
+                        <div class="post-header-wrapper">
+                            <div>
+                                <h1 class="post-title">{{title}}</h1>
+
+                                <p class="post-date">Opublikowano: <time datetime="{{ published_at }}">{{ date format="LL" }}</time></p>
+                            </div>
+                        </div>
+                    </header>
+                    {{/post}}
                     {{/if}}
                 </div>
 
-                <ul class="site-nav">
-                    {{navigation}}
-
-                    {{#if @blog.logo}}
-                        <li class="site-nav-item"><a href="{{@blog.url}}/rss">RSS</a></li>
-                    {{/if}}
-                </ul>
-            </div>
         </header>
-    
+
         <div id="ajax-container">
             {{{body}}}
         </div>
