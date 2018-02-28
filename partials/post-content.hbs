@@ -5,7 +5,7 @@
 
     <footer class="post-footer clearfix">
         {{#if tags}}
-            <p class="post-tags"><span>Tagged:</span> {{tags}}</p>
+            <p class="post-tags"><span>Tagi:</span> {{ tags }}</p>
         {{/if}}
 
         <div class="share">
@@ -28,4 +28,24 @@
             </a>
         </div>
     </footer>
+
+    {{^is "page"}}
+    <div id="disqus_thread" class="comments"></div>
+
+    <script>
+        var disqus_config = function () {
+            this.page.url = '{{ url absolute="true" }}';
+            this.page.identifier = '{{ post.id }}';
+        };
+
+        (function() {
+            var d = document, s = d.createElement('script');
+            s.src = '//xyleen.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    {{/is}}
+
 </article>

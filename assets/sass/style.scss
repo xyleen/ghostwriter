@@ -5,6 +5,8 @@
 @import '_header';
 @import '_footer';
 
+@import '_post';
+
 
 // ============================================================ //
 // Colours //
@@ -22,7 +24,7 @@ body {
     background: $background;
     color: #424242;
     font-family: "Open Sans", arial, sans-serif;
-    font-size: 18px;
+    font-size: $font-main-size;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -164,7 +166,7 @@ table {
     margin: 0 auto;
     position: relative;
     width: 100%;
-    max-width: 889px;
+    // max-width: 889px;
 }
 
 #wrapper {
@@ -185,7 +187,7 @@ table {
     background: $secondary;
     border: none;
     border-radius: 3px;
-    color: #FEFEFE;
+    color: $background;
     font-size: 14px;
     font-weight: 700;
     padding: 10px 12px;
@@ -196,7 +198,7 @@ table {
 
 .button-square {
     background: $primary;
-    color: #FFF;
+    color: $background;
     float: left;
     font-size: 17px;
     margin: 0 0 0 10px;
@@ -211,7 +213,7 @@ table {
 
 #latest-post { display: none; }
 
-.post-container { margin: 0 40px; }
+// .post-container { margin: 0 40px; }
 
 .post-title,
 .page-title {
@@ -245,7 +247,7 @@ table {
     &:last-child { margin-bottom: 0; }
 }
 
-.post-footer { margin-top: 5px; }
+// .post-footer { margin-top: 5px; }
 
 .post-tags,
 .share {
@@ -266,7 +268,7 @@ table {
 
     a {
         background: $primary;
-        color: #FFF;
+        color: $background;
         display: inline-block;
         font-size: 16px;
         margin-left: 5px;
@@ -287,7 +289,7 @@ table {
 .older-posts {
     float: left;
     background: $primary;
-    color: #FEFEFE;
+    color: $background;
     font-size: 14px;
     font-weight: 600;
     margin: 0 5px;
@@ -340,7 +342,7 @@ table {
 .post-stub-tag {
     background: $secondary;
     border-radius: 3px;
-    color: #FFF;
+    color: $background;
     float: right;
     font-size: 10px;
     margin: 7px 0 0;

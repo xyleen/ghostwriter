@@ -1,0 +1,161 @@
+$post-image-tile-width: 440px;
+$post-image-margin-bottom: 30px;
+
+.post-content {
+    margin-top: 40px;
+
+    .kg-card-markdown {
+        > * {
+            max-width: $post-width;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        > p.has_wide_img {
+            max-width: initial;
+            margin-bottom: 0;
+        }
+
+        .has_captioned_img {
+            margin-bottom: 20px
+        }
+
+        >p:first-of-type, >p:nth-of-type(2) {
+            span {
+                font-size: $font-main-size + 5px;
+                font-family: $alt-sans;
+            }
+            font-size: $font-main-size + 5px;
+            font-family: $alt-sans;
+            max-width: $post-width + 200px;
+        }
+
+        >p:nth-of-type(2) {
+            margin-top: -32px;
+            text-align: right;
+
+            &:after {
+                content: "";
+                @extend %center-block;
+                margin: 30px auto;
+                border: none;
+                height: 1px;
+                max-width: 600px;
+                background: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0) 100%);
+            }
+        }
+    }
+
+    // TODO: line as mixin?
+    hr {
+        border: none;
+        height: 1px;
+        max-width: 600px;
+        background: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0) 100%);
+    }
+
+    span.right {
+        display: block;
+        margin-top: -20px;
+
+        text-align: right;
+        font-family: $alt-sans;
+        font-size: $font-main-size + 2px;
+    }
+
+    img {
+        margin-bottom: $post-image-margin-bottom;
+    }
+
+    // images
+    img[src*='wide'], .paralax {
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    img[src*='down'], .down {
+        margin-bottom: 20px;
+    }
+
+    img[src*='up'] {
+        margin-top: -20px;
+    }
+
+    .up {
+        margin-top: -20px;
+    }
+
+    .has_overlay_img {
+        position: relative;
+        max-width: initial;
+
+        img[src*='overlay'] {
+            @include absolute(left 0 top 0 right 0);
+            margin: 0;
+            display: none;
+        }
+
+        &:hover {
+            img[src$='overlay'] {
+                display: block;
+            }
+        }
+    }
+
+    .tiles {
+        .left, .right {
+            max-width: $post-image-tile-width;
+            p {
+                margin-bottom: 20px;
+            }
+        }
+
+        img {
+            margin: 0;
+        }
+
+        img ~ .left, img ~ .right {
+            margin-top: 0;
+        }
+
+        > p {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .left {
+            float: left;
+
+            .image-caption {
+                text-align: left;
+                padding: 0 0 0 8px;
+            }
+        }
+
+        .right {
+            float: right;
+        }
+
+        .image-caption {
+            margin: 0 auto;
+        }
+
+        @extend %clearfix;
+    }
+
+    .image-caption {
+        display: block;
+        max-width: $post-width;
+        margin: -$post-image-margin-bottom auto 20px;
+        padding: 0 8px 0 0;
+
+        text-align: right;
+        font-family: $alt-sans;
+    }
+}
+
+.post-footer, .comments {
+    max-width: $post-width;
+    margin: 50px auto auto auto;
+}

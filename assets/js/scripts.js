@@ -1,5 +1,28 @@
 jQuery(function($) {
 
+    // xyleen/ghostwriter custom js
+    // the rest of JS needs an audit and possibly most of it needs to be removed
+    $('.post-content img').each(function () {
+        var $img = $(this);
+        var alt = $img.prop('alt');
+
+        if (!alt) {
+            return;
+        }
+
+        var afterImgSrcHash = $img.prop('src').split('#')[1];
+        var hasAlt = afterImgSrcHash ? afterImgSrcHash.indexOf('alt') !== -1 : false;
+        if (!hasAlt) {
+            return;
+        }
+
+        $img.after('<span class="image-caption">' + alt + '</span>');
+    });
+
+    $('.post-content p:has(img[src*="wide"])').addClass('has_wide_img');
+    $('.post-content p:has(img + span.image-caption)').addClass('has_captioned_img');
+    $('.post-content p:has(img[src*="overlay"])').addClass('has_overlay_img');
+
     /* ============================================================ */
     /* Responsive Videos */
     /* ============================================================ */
