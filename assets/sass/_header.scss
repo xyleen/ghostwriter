@@ -1,6 +1,6 @@
 @import 'global';
 
-$header-tint: rgba(15, 15, 25, 0.37);
+$header-tint: rgba(15, 15, 25, 0.5);
 
 $header-menu-font-size: 16px;
 $header-post-title-font-size: 72px;
@@ -44,7 +44,13 @@ $header-post-title-font-size: 72px;
                 font-weight: 400;
                 font-size: $header-menu-font-size;
                 color: $background;
-                text-shadow: 1px 1px 1px rgba(black, 0.3);
+                text-shadow: 1px 1px 1px rgba(black, 0.4);
+
+                transition-timing-function: ease-in-out;
+                transition-duration: 0.15s;
+                &:hover {
+                    color: $primary;
+                }
             }
 
             .site-nav-list {

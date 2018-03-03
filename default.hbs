@@ -22,47 +22,40 @@
 </head>
 <body class="{{ body_class }}">
 
-    <div id="wrapper">
+    <div id="wrapper" {{#unless post }}class="main"{{/unless}}>
         <header class="site-header">
             <div class="site-title-wrapper">
 
                 {{#if post.feature_image }}
                     <a class="site-logo js-ajax-link" title="{{ @blog.title }}" href="{{ @blog.url }}"><figure class="tint"><img src="{{ post.feature_image }}" alt="{{ @blog.title }}" /></figure></a>
-                {{else}}
-                    <a class="site-logo js-ajax-link" title="{{ @blog.title }}" href="{{ @blog.url }}"><figure class="tint"><img src="{{ @blog.logo }}" alt="{{ @blog.title }}" /></figure></a>
                 {{/if}}
 
                 <div class="header-menu-content">
                     <nav class="site-nav">
                         <ul class="site-nav-list">
-                            {{!-- <li class="site-nav-item logo"><a class="js-ajax-link" title="{{ @blog.title }}" href="{{ @blog.url }}">{{ @blog.title }}</a></li> --}}
                             {{ navigation }}
-
-                            {{!-- {{#if @blog.logo }}
-                                <li class="site-nav-item"><a href="{{@blog.url}}/rss">RSS</a></li>
-                            {{/if}} --}}
                         </ul>
                     </nav>
-
-                    {{#if post }}
-                    {{#post}}
-                    <header class="post-header">
-                        <div class="post-header-wrapper">
-                            <div>
-                                <h1 class="post-title">{{title}}</h1>
-
-                                <p class="post-date">Opublikowano: <time datetime="{{ published_at }}">{{ date format="LL" }}</time></p>
-                            </div>
-                        </div>
-                    </header>
-                    {{/post}}
-                    {{/if}}
                 </div>
+
+                {{#if post }}
+                {{#post}}
+                <header class="post-header">
+                    <div class="post-header-wrapper">
+                        <div>
+                            <h1 class="post-title">{{title}}</h1>
+
+                            <p class="post-date">Opublikowano: <time datetime="{{ published_at }}">{{ date format="LL" }}</time></p>
+                        </div>
+                    </div>
+                </header>
+                {{/post}}
+                {{/if}}
 
         </header>
 
         <div id="ajax-container">
-            {{{body}}}
+            {{{ body }}}
         </div>
     </div>
 

@@ -1,0 +1,51 @@
+<nav class="older-posts over-x-medium">
+    {{#foreach posts from=from to="100"}}
+        <div class="older-post {{#if @odd}}left{{else}}right{{/if}}">
+        {{#if @odd}}
+            <div class="half img">
+                <div class="older-post-wrapper img">
+                    <a href={{ url }} class="older-post-img" style="background-image: url('{{ img_url feature_image }}')" ></a>
+                </div>
+            </div>
+            <div class="half text">
+                <div class="older-post-wrapper">
+                    <div class="older-post-text">
+                        <h3 class="post-title">
+                            <a href="{{ url }}">{{ title }}</a>
+                        </h3>
+                        <p class="post-date">
+                            <i class="fa fa-calendar-o"></i> <time datetime="{{ published_at }}">{{ date format="LL" locale="pl" }}</time>
+                            <i class="fa fa-clock-o"></i> <span>{{ reading_time seconds="< 1 min" minute="1 min" minutes="% min" }}</span>
+                            <i class="fa fa-tags"></i> {{ tags }}
+                        </p>
+
+                        <div class="excerpt excerpt-small">{{ excerpt }}</div>
+                    </div>
+                </div>
+            </div>
+        {{else}}
+            <div class="half text">
+                <div class="older-post-wrapper">
+                    <div class="older-post-text">
+                        <h3 class="post-title">
+                            <a href="{{ url }}">{{ title }}</a>
+                        </h3>
+                        <p class="post-date">
+                            <i class="fa fa-calendar-o"></i> <time datetime="{{ published_at }}">{{ date format="LL" locale="pl" }}</time>
+                            <i class="fa fa-clock-o"></i> <span>{{ reading_time seconds="< 1 min" minute="1 min" minutes="% min" }}</span>
+                            <i class="fa fa-tags"></i> {{ tags }}
+                        </p>
+
+                        <div class="excerpt excerpt-small">{{ excerpt }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="half img">
+                <div class="older-post-wrapper img">
+                    <a href={{ url }} class="older-post-img" style="background-image: url('{{ img_url feature_image }}')" ></a>
+                </div>
+            </div>
+        {{/if}}
+        </div>
+    {{/foreach}}
+</nav>

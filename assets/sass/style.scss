@@ -5,6 +5,7 @@
 @import '_header';
 @import '_footer';
 
+@import '_main-page';
 @import '_post';
 
 
@@ -228,13 +229,10 @@ table {
 
 .post-date,
 .blog-description {
-    color: #AEADAD;
-    font-size: 14px;
-    font-weight: 600;
     line-height: 1;
     margin: 25px 0 0;
 
-    a { color: #AEADAD; }
+    a { color: #888; }
     a:hover { color: $primary; }
 }
 
@@ -246,8 +244,6 @@ table {
 
     &:last-child { margin-bottom: 0; }
 }
-
-// .post-footer { margin-top: 5px; }
 
 .post-tags,
 .share {
@@ -283,22 +279,6 @@ table {
 .post-navigation {
     display: table;
     margin: 70px auto 100px;
-}
-
-.newer-posts,
-.older-posts {
-    float: left;
-    background: $primary;
-    color: $background;
-    font-size: 14px;
-    font-weight: 600;
-    margin: 0 5px;
-    padding: 5px 10px 6px;
-    text-transform: uppercase;
-
-    &:hover {
-        background: $secondary;
-    }
 }
 
 .page-number { display: none; }
