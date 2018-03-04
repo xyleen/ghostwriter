@@ -1,16 +1,19 @@
-{{!-- This requires installation of https://github.com/xyleen/ghost-helper-foreach-middle in Ghost --}}
-{{#foreach-middle navigation}}
-    {{#if isMiddle}}
+<nav class="site-nav normal">
+    {{!-- Horizontal menu for larger screens --}}
+    <ul class="site-nav-list hide-till-loaded">
+        {{#foreach navigation}}
+            <li class="site-nav-item"><a class="js-ajax-link" title="{{ label }}" href="{{ url absolute="true" }}">{{ label }}</a></li>
+        {{/foreach}}
         <li class="site-nav-item logo"><a class="js-ajax-link" title="{{ @blog.title }}" href="{{ @blog.url }}">{{ @blog.title }}</a></li>
-        <li class="site-nav-item"><a class="js-ajax-link" title="{{ label }}" href="{{ url absolute="true" }}">{{ label }}</a></li>
-    {{else}}
-        <li class="site-nav-item"><a class="js-ajax-link" title="{{ label }}" href="{{ url absolute="true" }}">{{ label }}</a></li>
-    {{/if}}
-{{/foreach-middle}}
+    </ul>
 
-{{#foreach navigation}}
-    {{#if @first}}
-        <li class="site-nav-item logo small"><a class="js-ajax-link" title="{{ @blog.title }}" href="{{ @blog.url }}">{{ @blog.title }}</a></li>
-    {{/if}}
-    <li class="site-nav-item small"><a class="js-ajax-link" title="{{ label }}" href="{{ url absolute="true" }}">{{ label }}</a></li>
-{{/foreach}}
+    {{!-- Vertical menu for smaller screens --}}
+    <ul class="site-nav-list small">
+        {{#foreach navigation}}
+            {{#if @first}}
+                <li class="site-nav-item logo small"><a class="js-ajax-link" title="{{ @blog.title }}" href="{{ @blog.url }}">{{ @blog.title }}</a></li>
+            {{/if}}
+            <li class="site-nav-item small"><a class="js-ajax-link" title="{{ label }}" href="{{ url absolute="true" }}">{{ label }}</a></li>
+        {{/foreach}}
+    </ul>
+</nav>

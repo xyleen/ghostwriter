@@ -24,15 +24,20 @@ jQuery(function($) {
     $('.post-content p:has(img + span.image-caption)').addClass('has_captioned_img');
     $('.post-content p:has(img[src*="overlay"])').addClass('has_overlay_img');
 
+    const menuLength = $('.site-nav.normal .site-nav-item').length;
+    $('.site-nav.normal .site-nav-item.logo').insertAfter($('.site-nav.normal .site-nav-item').eq(Math.floor(length / 2) + 1));
+
     $('.excerpt').each(function () {
         var $excerpt = $(this);
 
-        var content = $excerpt.text().split('JS_BREAK');
+        var content = $excerpt.text().split('=');
         var biggerTag = $excerpt.hasClass('excerpt-small') ? 'h4' : 'h2';
         var smallerTag = $excerpt.hasClass('excerpt-small') ? 'h5' : 'h3';
 
         $excerpt.html('<' + biggerTag + '>' + content[0] + '</' + biggerTag + '>' + '<' + smallerTag + '>' + content[1] + '</' + smallerTag + '>'); 
     });
+
+    $('.hide-till-loaded').removeClass('hide-till-loaded');
 
     /* ============================================================ */
     /* Responsive Videos */
