@@ -27,7 +27,7 @@
             <div class="site-title-wrapper">
 
                 {{#if post.feature_image }}
-                    <a class="site-logo js-ajax-link" title="{{ @blog.title }}" href="{{ @blog.url }}"><figure class="tint"><img src="{{ post.feature_image }}" alt="{{ @blog.title }}" /></figure></a>
+                    <a class="site-logo js-ajax-link" title="{{ @blog.title }}" href="{{ @blog.url }}"><figure class="tint"><div style="background-image: url('{{ img_url post.feature_image }}')"></div></figure></a>
                 {{/if}}
 
                 <div class="header-menu-content">

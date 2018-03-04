@@ -7,3 +7,10 @@
         <li class="site-nav-item"><a class="js-ajax-link" title="{{ label }}" href="{{ url absolute="true" }}">{{ label }}</a></li>
     {{/if}}
 {{/foreach-middle}}
+
+{{#foreach navigation}}
+    {{#if @first}}
+        <li class="site-nav-item logo small"><a class="js-ajax-link" title="{{ @blog.title }}" href="{{ @blog.url }}">{{ @blog.title }}</a></li>
+    {{/if}}
+    <li class="site-nav-item small"><a class="js-ajax-link" title="{{ label }}" href="{{ url absolute="true" }}">{{ label }}</a></li>
+{{/foreach}}

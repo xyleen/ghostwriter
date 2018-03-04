@@ -9,6 +9,13 @@ $post-image-margin-bottom: 30px;
             max-width: $post-width;
             margin-left: auto;
             margin-right: auto;
+
+            @include respond-to(s-medium) {
+                max-width: 96%;
+            }
+            @include respond-to(medium) {
+                max-width: 92%;
+            }
         }
 
         > p.has_wide_img {
@@ -28,11 +35,19 @@ $post-image-margin-bottom: 30px;
             font-size: $font-main-size + 5px;
             font-family: $alt-sans;
             max-width: $post-width + 200px;
+
+            @include respond-to(x-medium) {
+                max-width: 94%;
+            }
         }
 
         >p:nth-of-type(2) {
             margin-top: -32px;
             text-align: right;
+
+            @include respond-to(medium) {
+                margin-top: -20px;
+            }
 
             &:after {
                 content: "";
@@ -80,6 +95,10 @@ $post-image-margin-bottom: 30px;
 
     img[src*='up'] {
         margin-top: -20px;
+
+        @include respond-to(x-medium) {
+            margin-top: 0;
+        }
     }
 
     .up {
@@ -106,6 +125,13 @@ $post-image-margin-bottom: 30px;
     .tiles {
         .left, .right {
             max-width: $post-image-tile-width;
+
+            @include respond-to(x-medium) {
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 20px;
+            }
+
             p {
                 margin-bottom: 20px;
             }
@@ -126,6 +152,9 @@ $post-image-margin-bottom: 30px;
 
         .left {
             float: left;
+            @include respond-to(x-medium) {
+                float: none;
+            }
 
             .image-caption {
                 text-align: left;
@@ -135,6 +164,9 @@ $post-image-margin-bottom: 30px;
 
         .right {
             float: right;
+            @include respond-to(x-medium) {
+                float: none;
+            }
         }
 
         .image-caption {
@@ -158,4 +190,21 @@ $post-image-margin-bottom: 30px;
 .post-footer, .comments {
     max-width: $post-width;
     margin: 50px auto auto auto;
+
+    @include respond-to(s-medium) {
+        max-width: 96%;
+    }
+    @include respond-to(medium) {
+        max-width: 92%;
+    }
+
+    @include respond-to(x-small) {
+        .post-tags, .share {
+            float: none;
+            text-align: center;
+        }
+        .share {
+            margin-top: 20px;
+        }
+    }
 }

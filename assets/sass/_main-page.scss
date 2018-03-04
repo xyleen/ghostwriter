@@ -17,6 +17,12 @@ $secondary-posts-title-font-size: $first-post-title-font-size / 1.6;
         }
     }
 
+    .big-post-text.tags {
+        @include respond-to(small) {
+            top: 70%;
+        }
+    }
+
     .post-date.tags {
         font-size: 26px;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
@@ -84,6 +90,10 @@ $secondary-posts-title-font-size: $first-post-title-font-size / 1.6;
         right: 0;
         left: 0;
         position: absolute;
+
+        @include respond-to(small) {
+            top: 10px;
+        }
     }
 
     .site-nav, .header-menu-content {
@@ -118,9 +128,9 @@ $secondary-posts-title-font-size: $first-post-title-font-size / 1.6;
     .big-post-text {
         @include absolute(left 0 top 50% right 0);
         transform: translateY(-33%);
-        // @include respond-to(small) {
-        //     top: 60%;
-        // }
+        @include respond-to(small) {
+            top: 60%;
+        }
         z-index: 100;
 
         color: $background;
@@ -129,28 +139,28 @@ $secondary-posts-title-font-size: $first-post-title-font-size / 1.6;
 
         .post-title {
             font-size: $first-post-title-font-size;
-            // @include respond-to(medium) {
-            //     font-size: $first-post-title-font-size / 1.1;
-            //     margin-left: 30px;
-            //     margin-right: 30px;
-            // }
-            // @include respond-to(x-medium) {
-            //     font-size: $first-post-title-font-size / 1.2;
-            // }
-            // @include respond-to(small) {
-            //     font-size: $first-post-title-font-size / 1.4;
-            // }
-            // @include respond-to(x-small) {
-            //     font-size: $first-post-title-font-size / 1.6;
-            // }
+            @include respond-to(medium) {
+                font-size: $first-post-title-font-size / 1.1;
+                margin-left: 30px;
+                margin-right: 30px;
+            }
+            @include respond-to(x-medium) {
+                font-size: $first-post-title-font-size / 1.2;
+            }
+            @include respond-to(small) {
+                font-size: $first-post-title-font-size / 1.4;
+            }
+            @include respond-to(x-small) {
+                font-size: $first-post-title-font-size / 1.6;
+            }
         }
         $post-date-font-size: 16px;
         .post-date {
             margin: -10px 0 0;
             font-size: 16px;
-            // @include respond-to(s-medium) {
-            //     font-size: (16px / 1.1);
-            // }
+            @include respond-to(s-medium) {
+                font-size: (16px / 1.1);
+            }
             .fa {
                 font-size: $post-date-font-size - 4px;
             }
@@ -164,15 +174,15 @@ $secondary-posts-title-font-size: $first-post-title-font-size / 1.6;
             max-width: 900px;
             margin-left: auto;
             margin-right: auto;
-            // @include respond-to(x-medium) {
-            //     max-width: 800px;
-            // }
-            // @include respond-to(s-medium) {
-            //     max-width: 600px;
-            // }
-            // @include respond-to(small) {
-            //    display: none;
-            // }
+            @include respond-to(x-medium) {
+                max-width: 800px;
+            }
+            @include respond-to(s-medium) {
+                max-width: 600px;
+            }
+            @include respond-to(small) {
+               display: none;
+            }
         }
         h2 {
             font-family: $basic-sans;
@@ -180,25 +190,25 @@ $secondary-posts-title-font-size: $first-post-title-font-size / 1.6;
             font-size: 22px;
             margin: 30px auto 15px;
             transform: translateX(-25px);
-            // @include respond-to(x-medium) {
-            //     font-size: (22px / 1.1);
-            //     max-width: 800px;
-            //     transform: translateX(0);
-            // }
+            @include respond-to(x-medium) {
+                font-size: (22px / 1.1);
+                max-width: 800px;
+                transform: translateX(0);
+            }
         }
         h3 {
             margin-top: 15px;
             font-size: 20px;
             transform: translateX(25px);
             text-align: right;
-            // @include respond-to(x-medium) {
-            //     font-size: (20px / 1.1);
-            //     max-width: 800px;
-            // }
-            // @include respond-to(s-medium) {
-            //     text-align: center;
-            //     transform: translateX(0);
-            // }
+            @include respond-to(x-medium) {
+                font-size: (20px / 1.1);
+                max-width: 800px;
+            }
+            @include respond-to(s-medium) {
+                text-align: center;
+                transform: translateX(0);
+            }
         }
     }
 }
@@ -217,17 +227,17 @@ $secondary-posts-title-font-size: $first-post-title-font-size / 1.6;
         }
         @include tint($header-tint);
 
-        // @include respond-to(s-medium) {
-        //     width: 100%;
-        //     display: block;
-        // }
+        @include respond-to(s-medium) {
+            width: 100%;
+            display: block;
+        }
     }
 
     .small-post-img {
         height: $secondary-posts-image-height;
-        // @include respond-to(s-medium) {
-        //     height: $secondary-posts-image-height / 1.2;
-        // }
+        @include respond-to(s-medium) {
+            height: $secondary-posts-image-height / 1.2;
+        }
     }
 
     .small-post-text {
@@ -244,19 +254,19 @@ $secondary-posts-title-font-size: $first-post-title-font-size / 1.6;
             font-size: $secondary-posts-title-font-size;
             margin-left: 20px;
             margin-right: 20px;
-            // @include respond-to(x-medium) {
-            //     font-size: $secondary-posts-title-font-size / 1.3;
-            // }
-            // @include respond-to(s-medium) {
-            //     font-size: $secondary-posts-title-font-size;
-            // }
+            @include respond-to(x-medium) {
+                font-size: $secondary-posts-title-font-size / 1.3;
+            }
+            @include respond-to(s-medium) {
+                font-size: $secondary-posts-title-font-size;
+            }
         }
         .post-date {
             margin: -10px 0 0;
             font-size: 14px;
-            // @include respond-to(x-medium) {
-            //     font-size: 14px / 1.3;
-            // }
+            @include respond-to(x-medium) {
+                font-size: 14px / 1.3;
+            }
             .fa {
                 font-size: 11px;
             }
@@ -287,9 +297,9 @@ $older-posts-out-of-max-width-text: 60px;
             max-width: 600px;
             background: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0) 100%);
             transform: translateY($older-posts-spacing/2);
-            // @include respond-to(x-medium) {
-            //     transform: translateY(($older-posts-spacing - 20px)/2);
-            // }
+            @include respond-to(x-medium) {
+                transform: translateY(($older-posts-spacing - 20px)/2);
+            }
         }
 
         .half {
@@ -298,30 +308,30 @@ $older-posts-out-of-max-width-text: 60px;
 
             &.img {
                 width: $older-post-image-width;
-                // @include respond-to(large) {
-                //     width: $older-post-image-width / 1.2;
-                // }
-                // @include respond-to(x-medium) {
-                //     width: 100%;
-                // }
+                @include respond-to(large) {
+                    width: $older-post-image-width / 1.2;
+                }
+                @include respond-to(x-medium) {
+                    width: 100%;
+                }
             }
 
             &.text {
                 width: $older-post-max-width - $older-post-image-width;
-                // @include respond-to(large) {
-                //     width: 900px -  $older-post-image-width / 1.2;
-                // }
-                // @include respond-to(x-medium) {
-                //     width: 100%;
-                // }
+                @include respond-to(large) {
+                    width: 900px -  $older-post-image-width / 1.2;
+                }
+                @include respond-to(x-medium) {
+                    width: 100%;
+                }
             }
         }
 
         & + & {
             margin-top: $older-posts-spacing;
-            // @include respond-to(x-medium) {
-            //     margin-top: $older-posts-spacing - 20px;
-            // }
+            @include respond-to(x-medium) {
+                margin-top: $older-posts-spacing - 20px;
+            }
         }
 
         &.left {
@@ -330,9 +340,9 @@ $older-posts-out-of-max-width-text: 60px;
             }
             .older-post-text {
                 left: $older-posts-out-of-max-width-text;
-                // @include respond-to(x-medium) {
-                //     left: 0;
-                // }
+                @include respond-to(x-medium) {
+                    left: 0;
+                }
             }
         }
 
@@ -349,20 +359,20 @@ $older-posts-out-of-max-width-text: 60px;
             position: relative;
 
             height: $older-post-height;
-            // @include respond-to(x-medium) {
-            //     height: auto;
-            // }
+            @include respond-to(x-medium) {
+                height: auto;
+            }
 
             .older-post-text {
                 position: absolute;
                 top: 50%;
                 transform: translateY(-50%);
 
-                // @include respond-to(x-medium) {
-                //     position: static;
-                //     transform: translateY(0);
-                //     margin-top: 20px;
-                // }
+                @include respond-to(x-medium) {
+                    position: static;
+                    transform: translateY(0);
+                    margin-top: 20px;
+                }
             }
 
             .older-post-img {
@@ -372,15 +382,16 @@ $older-posts-out-of-max-width-text: 60px;
                 background-repeat: no-repeat;
                 background-position: center;
 
+                display: block;
                 position: absolute;
                 top: 50%;
                 transform: translateY(-50%);
 
-                // @include respond-to(x-medium) {
-                //     height: $older-post-height;
-                //     position: static;
-                //     transform: translateY(0);
-                // }
+                @include respond-to(x-medium) {
+                    height: $older-post-height;
+                    position: static;
+                    transform: translateY(0);
+                }
             }
         }
 
@@ -429,25 +440,25 @@ $older-posts-out-of-max-width-text: 60px;
     // margin-left: auto;
     // margin-right: auto;
     max-width: $older-post-max-width;
-    // @include respond-to(large) {
-    //     max-width: 900px;
-    // }
-    // @include respond-to(medium) {
-    //     max-width: 700px;
-    // }
-    // @include respond-to(s-medium) {
-    //     max-width: 92%;
-    // }
+    @include respond-to(large) {
+        max-width: 900px;
+    }
+    @include respond-to(medium) {
+        max-width: 700px;
+    }
+    @include respond-to(s-medium) {
+        max-width: 92%;
+    }
 
     &.x-medium {
         display: none;
-        // @include respond-to(x-medium) {
-        //     display: block;
-        // }
+        @include respond-to(x-medium) {
+            display: block;
+        }
     }
-    // @include respond-to(x-medium) {
-    //     &.over-x-medium {
-    //         display: none;
-    //     }
-    // }
+    @include respond-to(x-medium) {
+        &.over-x-medium {
+            display: none;
+        }
+    }
 }

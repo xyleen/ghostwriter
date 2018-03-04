@@ -437,18 +437,9 @@ table {
 
     hr { margin: 35px 0; }
 
-    .site-header {
-        padding-top: 60px;
-    }
-
     .site-nav-item {
         display: block;
         margin: 15px 0;
-    }
-
-    .post-header {
-        margin-bottom: 35px;
-        padding-bottom: 45px;
     }
 
     .post-title,
@@ -486,28 +477,16 @@ table {
         margin-top: 45px;
     }
 
-    .post-container,
     .post-list,
     .author-profile {
         margin-right: 25px;
         margin-left: 25px;
     }
 
-    .post-tags { width: 100%; }
-
     .post-stub a,
     .post-stub a:hover {
         padding-top: 12px;
         padding-bottom: 12px;
-    }
-
-    .share {
-        float: left;
-        margin-top: 20px;
-
-        a {
-            margin: 0 5px 0 0;
-        }
     }
 
     .footer {
@@ -516,10 +495,6 @@ table {
 }
 
 @media only screen and (max-width: 400px) {
-    .site-header {
-        padding-top: 40px;
-    }
-
     .post-title,
     .page-title,
     .author-name,
@@ -550,7 +525,6 @@ table {
         }
     }
 
-    .post-container,
     .post-list,
     .author-profile {
         margin-right: 15px;

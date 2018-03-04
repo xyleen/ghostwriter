@@ -19,6 +19,7 @@ jQuery(function($) {
         $img.after('<span class="image-caption">' + alt + '</span>');
     });
 
+    $('.post-content p:has(img)').addClass('has_img');
     $('.post-content p:has(img[src*="wide"])').addClass('has_wide_img');
     $('.post-content p:has(img + span.image-caption)').addClass('has_captioned_img');
     $('.post-content p:has(img[src*="overlay"])').addClass('has_overlay_img');

@@ -2,6 +2,7 @@
 
 $header-tint: rgba(15, 15, 25, 0.5);
 
+$header-height: 600px;
 $header-menu-font-size: 16px;
 $header-post-title-font-size: 72px;
 
@@ -28,6 +29,13 @@ $header-post-title-font-size: 72px;
 
                 background: $header-tint;
             }
+        }
+
+        div {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            height: $header-height;
         }
     }
 
@@ -67,11 +75,42 @@ $header-post-title-font-size: 72px;
                 width: 20%;
 
                 vertical-align: middle;
+
+                &.small {
+                    display: none;
+                    @include respond-to(small) {
+                        display: block;
+                        max-width: 400px;
+                        margin: 10px auto;
+                        width: auto;
+                    }
+                }
+
+                &.logo {
+                    .js-ajax-link {
+                        border-bottom: 0px solid transparent !important;
+                    }
+                }
+                .js-ajax-link {
+                    border-bottom: 0px solid transparent;
+                    &:hover {
+                        border-bottom: 1px solid $primary;
+                        padding-bottom: 3px;
+                    }
+                }
+
+                @include respond-to(small) {
+                    display: none;
+                }
             }
 
             .logo a {
                 font-size: $header-menu-font-size + 10px;
                 font-weight: 600;
+
+                @include respond-to(x-medium) {
+                    font-size: $header-menu-font-size + 5px;
+                }
             }
         }
     }
@@ -96,6 +135,10 @@ $header-post-title-font-size: 72px;
                 right: 0;
 
                 transform: translateY(-50%);
+
+                @include respond-to(small) {
+                    top: 62%;
+                }
             }
         }
 
@@ -109,10 +152,26 @@ $header-post-title-font-size: 72px;
             margin-top: 0px;
             font-weight: 400;
             font-size: floor($header-post-title-font-size / 3.5);
+            @include respond-to(medium) {
+                font-size: floor($header-post-title-font-size / 4.5);
+                margin-left: 30px;
+                margin-right: 30px;
+            }
         }
 
         .post-title {
             font-size: $header-post-title-font-size;
+            @include respond-to(medium) {
+                font-size: $header-post-title-font-size / 1.1;
+                margin-left: 30px;
+                margin-right: 30px;
+            }
+            @include respond-to(small) {
+                font-size: $header-post-title-font-size / 1.2;
+            }
+            @include respond-to(x-small) {
+                font-size: $header-post-title-font-size / 1.6;
+            }
         }
     }
 }
